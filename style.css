@@ -117,6 +117,53 @@ body {
 }
 
 /* =======================================
+   HERO SECTION
+======================================= */
+.hero {
+  padding-top: 120px;
+  /* clears fixed navbar */
+  min-height: calc(100vh - 70px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: var(--page-bg);
+}
+
+.hero-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.lg-heading {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.sm-heading {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--muted-text);
+  margin-bottom: 2rem;
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
+
+.icons a {
+  margin: 0 0.5rem;
+  color: var(--dark-text);
+  transition: 0.3s ease;
+}
+
+.icons a:hover {
+  color: var(--secondary);
+}
+
+
+/* =======================================
    PROJECTS PAGE
 ======================================= */
 .projects-section {
