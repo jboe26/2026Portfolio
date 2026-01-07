@@ -42,19 +42,19 @@ if (contactForm) {
     const recipient = 'joshrboepple@outlook.com';
     const subject = `New Inquiry from ${formData.get('firstName')} ${formData.get('lastName')}`;
     const body = `
-   Hello,
-   
-   You have received a new inquiry. Here are the details:
-   
-   Full Name: ${formData.get('firstName')} ${formData.get('lastName')}
-   Email: ${formData.get('email')}
-   Phone: ${formData.get('phone') || 'N/A'}
-   Preferred Contact: ${formData.get('preferredContact') || 'N/A'}
-   Service Interest: ${formData.get('serviceInterest') || 'N/A'}
-   
-   Message:
-   ${formData.get('message')}
-   `;
+      Hello,
+      
+      You have received a new inquiry. Here are the details:
+      
+      Full Name: ${formData.get('firstName')} ${formData.get('lastName')}
+      Email: ${formData.get('email')}
+      Phone: ${formData.get('phone') || 'N/A'}
+      Preferred Contact: ${formData.get('preferredContact') || 'N/A'}
+      Service Interest: ${formData.get('serviceInterest') || 'N/A'}
+      
+      Message:
+      ${formData.get('message')}
+      `;
 
     const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.open(mailtoLink, '_blank');

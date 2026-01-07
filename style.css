@@ -1,17 +1,19 @@
 /* =======================================
    ROOT VARIABLES
-   ======================================= */
+======================================= */
 :root {
   --primary: #444;
   --secondary: #4682b4;
+  --accent-green: #2e8b57;
   --light-bg: #ffffff;
   --dark-text: #222;
   --muted-text: #555;
+  --page-bg: #f7f9fc;
 }
 
 /* =======================================
-     BASE RESET
-     ======================================= */
+   GLOBAL RESET
+======================================= */
 * {
   margin: 0;
   padding: 0;
@@ -25,16 +27,21 @@ body {
 
 body {
   font-family: 'Segoe UI', sans-serif;
+  background: var(--page-bg);
+  color: var(--dark-text);
   line-height: 1.6;
-  background: #f4f4f4;
-  color: #333;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
 }
 
 /* =======================================
-     NAVIGATION BAR
-     ======================================= */
+   NAVIGATION BAR
+======================================= */
 .navbar {
   background: var(--light-bg);
   padding: 1rem 0;
@@ -55,7 +62,7 @@ body {
 }
 
 .nav-brand {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: bold;
   color: var(--dark-text);
   text-decoration: none;
@@ -68,9 +75,8 @@ body {
 }
 
 .nav-links a {
-  color: var(--dark-text);
   text-decoration: none;
-  font-size: 1rem;
+  color: var(--dark-text);
   transition: 0.3s ease;
 }
 
@@ -84,7 +90,6 @@ body {
   background: none;
   border: none;
   font-size: 2rem;
-  color: var(--dark-text);
   cursor: pointer;
 }
 
@@ -94,8 +99,8 @@ body {
     position: absolute;
     top: 70px;
     right: 0;
-    background: var(--light-bg);
     width: 100%;
+    background: var(--light-bg);
     flex-direction: column;
     align-items: center;
     padding: 1rem 0;
@@ -112,117 +117,10 @@ body {
 }
 
 /* =======================================
-     HOME PAGE
-     ======================================= */
-.hero {
-  min-height: calc(100vh - 70px);
-  padding-top: 70px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  background: url("img/background.jpg") no-repeat center center/cover;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.7);
-  z-index: 1;
-}
-
-.hero>* {
-  position: relative;
-  z-index: 2;
-}
-
-
-
-.lg-heading {
-  font-size: clamp(2.5rem, 6vw, 6rem);
-  font-weight: 700;
-  color: var(--dark-text);
-}
-
-.text-secondary {
-  color: var(--secondary);
-}
-
-.sm-heading {
-  font-size: clamp(1rem, 2vw, 1.5rem);
-  color: var(--muted-text);
-  margin-top: 1rem;
-}
-
-.icons {
-  margin-top: 1.5rem;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.icons a {
-  color: var(--dark-text);
-  transition: 0.3s ease;
-}
-
-.icons a:hover {
-  color: var(--secondary);
-}
-
-/* =======================================
-     ABOUT PAGE
-     ======================================= */
-.about-section {
-  padding: 120px 1rem 3rem;
-  background: #f7f9fc;
-  min-height: calc(100vh - 70px);
-  display: flex;
-  justify-content: center;
-}
-
-.about-container {
-  max-width: 800px;
-  text-align: center;
-}
-
-.about-container h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  color: var(--dark-text);
-}
-
-.about-container p {
-  font-size: 1.1rem;
-  color: var(--muted-text);
-  line-height: 1.7;
-}
-
-/* Profile Image */
-.profile-image-wrapper {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.profile-image {
-  width: 250px;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid #ddd;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  margin-bottom: 1.5rem;
-}
-
-/* =======================================
-     PROJECTS PAGE
-     ======================================= */
+   PROJECTS PAGE
+======================================= */
 .projects-section {
   padding: 120px 1rem 3rem;
-  background: #f7f9fc;
   min-height: calc(100vh - 70px);
 }
 
@@ -235,10 +133,56 @@ body {
 .projects-container h1 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
+}
+
+/* Tabs */
+.project-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tab-btn {
+  padding: 0.6rem 1.2rem;
+  background: #ddd;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.tab-btn:hover {
+  background: var(--secondary);
+  color: #fff;
+}
+
+.tab-btn.active {
+  background: var(--secondary);
+  color: #fff;
+}
+
+/* Tab Content */
+.tab-content {
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+
+.tab-content.active {
+  display: grid;
+}
+
+/* Subheadings inside School Projects */
+.project-subheading {
+  grid-column: 1 / -1;
+  text-align: left;
+  font-size: 1.6rem;
+  margin: 2rem 0 1rem;
   color: var(--dark-text);
 }
 
-/* Grid */
+/* Grid Layout */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -268,19 +212,17 @@ body {
 
 .project-card h3 {
   margin-bottom: 0.5rem;
-  color: var(--dark-text);
 }
 
 .project-card p {
   color: var(--muted-text);
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
+  margin-bottom: 1.2rem;
 }
 
 /* Project Buttons */
 .project-links {
   display: flex;
-  justify-content: space-between;
+  gap: 1rem;
 }
 
 .btn-project {
@@ -297,53 +239,14 @@ body {
 }
 
 .btn-project.secondary {
-  background: #2e8b57;
+  background: var(--accent-green);
 }
 
 .btn-project.secondary:hover {
   background: #226b43;
 }
 
-/* PROJECT TABS */
-.project-tabs {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.tab-btn {
-  padding: 0.6rem 1.2rem;
-  border: none;
-  background: #ddd;
-  color: #333;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: 0.3s ease;
-}
-
-.tab-btn:hover {
-  background: var(--secondary);
-  color: #fff;
-}
-
-.tab-btn.active {
-  background: var(--secondary);
-  color: #fff;
-}
-
-/* TAB CONTENT */
-.tab-content {
-  display: none;
-  animation: fadeIn 0.4s ease;
-}
-
-.tab-content.active {
-  display: grid;
-}
-
-/* Fade animation */
+/* Fade Animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -356,13 +259,42 @@ body {
   }
 }
 
+/* Mobile Buttons */
+@media (max-width: 500px) {
+  .project-links {
+    flex-direction: column;
+  }
+}
 
 /* =======================================
-     CONTACT PAGE
-     ======================================= */
+   ABOUT PAGE
+======================================= */
+.about-section {
+  padding: 120px 1rem 3rem;
+  min-height: calc(100vh - 70px);
+  display: flex;
+  justify-content: center;
+}
+
+.about-container {
+  max-width: 800px;
+  text-align: center;
+}
+
+.profile-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #ddd;
+  margin-bottom: 1.5rem;
+}
+
+/* =======================================
+   CONTACT PAGE
+======================================= */
 .contact-section {
   padding: 120px 1rem 3rem;
-  background: #f7f9fc;
   min-height: calc(100vh - 70px);
   display: flex;
   justify-content: center;
@@ -374,18 +306,6 @@ body {
   text-align: center;
 }
 
-.contact-container h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: var(--dark-text);
-}
-
-.contact-container p {
-  color: var(--muted-text);
-  margin-bottom: 2rem;
-}
-
-/* Contact Form */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -402,21 +322,6 @@ body {
   text-align: left;
 }
 
-.form-group.full {
-  width: 100%;
-}
-
-label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: var(--dark-text);
-}
-
-label span {
-  color: red;
-}
-
 input,
 select,
 textarea {
@@ -424,7 +329,6 @@ textarea {
   padding: 0.8rem;
   border: 1px solid #ccc;
   border-radius: 6px;
-  font-size: 1rem;
   background: #fff;
   transition: 0.3s ease;
 }
@@ -433,7 +337,6 @@ input:focus,
 select:focus,
 textarea:focus {
   border-color: var(--secondary);
-  outline: none;
   box-shadow: 0 0 5px rgba(70, 130, 180, 0.3);
 }
 
@@ -447,21 +350,10 @@ textarea:focus {
   font-size: 1.1rem;
   cursor: pointer;
   transition: 0.3s ease;
-  margin-top: 1rem;
 }
 
 .btn-submit:hover {
   background: #35648a;
-}
-
-/* Success Message */
-.form-message {
-  margin-top: 1rem;
-}
-
-.success {
-  color: green;
-  font-weight: bold;
 }
 
 /* Mobile Contact Form */
@@ -472,8 +364,8 @@ textarea:focus {
 }
 
 /* =======================================
-     FOOTER
-     ======================================= */
+   FOOTER
+======================================= */
 .footer {
   margin-top: auto;
   background: var(--light-bg);
