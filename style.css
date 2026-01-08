@@ -3,8 +3,10 @@
 ======================================= */
 :root {
   --primary: #444;
+  --primary2: #fff;
   --secondary: #4682b4;
   --accent-green: #2e8b57;
+  --navbar-bg: #4682b4;
   --light-bg: #ffffff;
   --dark-text: #222;
   --muted-text: #555;
@@ -43,7 +45,7 @@ body {
    NAVIGATION BAR
 ======================================= */
 .navbar {
-  background: var(--light-bg);
+  background: var(--navbar-bg);
   padding: 1rem 0;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   position: fixed;
@@ -82,7 +84,7 @@ body {
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--secondary);
+  color: var(--primary2);
 }
 
 .nav-toggle {
