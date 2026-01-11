@@ -474,3 +474,55 @@ textarea:focus {
   color: var(--dark-text);
   box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
 }
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 100px 1rem 2rem;
+  }
+
+  .contact-container {
+    padding: 0 1rem;
+  }
+
+  .contact-form {
+    gap: 1rem;
+  }
+
+  .form-group label {
+    font-size: 0.95rem;
+  }
+
+  input,
+  select,
+  textarea {
+    padding: 0.7rem;
+    font-size: 1rem;
+  }
+
+  .btn-submit {
+    padding: 0.7rem 1.2rem;
+    font-size: 1rem;
+  }
+
+  .nav-toggle {
+    font-size: 1.8rem;
+  }
+
+  .nav-brand {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .contact-section {
+    padding-top: 80px;
+  }
+
+  .btn-submit {
+    width: 100%;
+  }
+
+  .form-group label {
+    font-size: 0.9rem;
+  }
+}
