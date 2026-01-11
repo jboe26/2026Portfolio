@@ -12,7 +12,6 @@
   --muted-text: #555;
   --page-bg: #f7f9fc;
 
-  /* Responsive helpers */
   --section-padding: 120px;
 }
 
@@ -99,38 +98,6 @@ body {
   color: var(--primary2);
 }
 
-/* Mobile Nav */
-@media (max-width: 768px) {
-  .nav-links {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 100%;
-    background: var(--navbar-bg);
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem 0;
-    display: none;
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-
-  .nav-toggle {
-    display: block;
-  }
-
-  .nav-brand {
-    font-size: 1.3rem;
-  }
-
-  .nav-links a {
-    padding: 0.8rem 0;
-    font-size: 1.1rem;
-  }
-}
-
 /* =======================================
    HERO SECTION
 ======================================= */
@@ -175,36 +142,6 @@ body {
   color: var(--primary2);
 }
 
-/* HERO MOBILE */
-@media (max-width: 768px) {
-  .hero {
-    padding-top: 100px;
-    padding-bottom: 3rem;
-  }
-
-  .lg-heading {
-    font-size: 2.2rem;
-  }
-
-  .sm-heading {
-    font-size: 1.1rem;
-  }
-
-  .icons a i {
-    font-size: 1.6rem;
-  }
-}
-
-@media (max-width: 400px) {
-  .lg-heading {
-    font-size: 1.8rem;
-  }
-
-  .sm-heading {
-    font-size: 1rem;
-  }
-}
-
 /* =======================================
    PROJECTS PAGE
 ======================================= */
@@ -224,7 +161,6 @@ body {
   margin-bottom: 2rem;
 }
 
-/* Tabs */
 .project-tabs {
   display: flex;
   justify-content: center;
@@ -252,7 +188,6 @@ body {
   color: #fff;
 }
 
-/* Tab Content */
 .tab-content {
   display: none;
   animation: fadeIn 0.4s ease;
@@ -262,7 +197,6 @@ body {
   display: grid;
 }
 
-/* Subheadings */
 .project-subheading {
   grid-column: 1 / -1;
   text-align: left;
@@ -271,14 +205,12 @@ body {
   color: var(--dark-text);
 }
 
-/* Grid Layout */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
-/* Project Card */
 .project-card {
   background: #fff;
   padding: 1.5rem;
@@ -299,16 +231,11 @@ body {
   margin-bottom: 1rem;
 }
 
-.project-card h3 {
-  margin-bottom: 0.5rem;
-}
-
 .project-card p {
   color: var(--muted-text);
   margin-bottom: 1.2rem;
 }
 
-/* Project Buttons */
 .project-links {
   display: flex;
   gap: 1rem;
@@ -335,27 +262,6 @@ body {
   background: #226b43;
 }
 
-/* PROJECTS MOBILE */
-@media (max-width: 768px) {
-  .project-tabs {
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .tab-btn {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-
-  .projects-grid {
-    gap: 1.2rem;
-  }
-
-  .project-card {
-    padding: 1rem;
-  }
-}
-
 /* =======================================
    ABOUT PAGE
 ======================================= */
@@ -378,13 +284,6 @@ body {
   border-radius: 50%;
   border: 4px solid #ddd;
   margin-bottom: 1.5rem;
-}
-
-@media (max-width: 768px) {
-  .profile-image {
-    width: 180px;
-    height: 180px;
-  }
 }
 
 /* =======================================
@@ -452,17 +351,6 @@ textarea:focus {
   background: #35648a;
 }
 
-@media (max-width: 768px) {
-  .form-row {
-    flex-direction: column;
-  }
-
-  .btn-submit {
-    padding: 0.7rem 1.2rem;
-    font-size: 1rem;
-  }
-}
-
 /* =======================================
    FOOTER
 ======================================= */
@@ -475,7 +363,82 @@ textarea:focus {
   box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* =======================================
+   MOBILE STYLES
+======================================= */
 @media (max-width: 768px) {
+
+  /* NAV */
+  .nav-toggle {
+    display: block;
+    font-size: 1.8rem;
+  }
+
+  .nav-brand {
+    font-size: 1.2rem;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: var(--navbar-bg);
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    display: none;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 0.8rem 0;
+    font-size: 1.1rem;
+  }
+
+  /* HERO */
+  .hero {
+    padding-top: 100px;
+    padding-bottom: 3rem;
+  }
+
+  .lg-heading {
+    font-size: 2.2rem;
+  }
+
+  .sm-heading {
+    font-size: 1.1rem;
+  }
+
+  /* PROJECTS */
+  .project-tabs {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tab-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .projects-grid {
+    gap: 1.2rem;
+  }
+
+  .project-card {
+    padding: 1rem;
+  }
+
+  /* ABOUT */
+  .profile-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  /* CONTACT */
   .contact-section {
     padding: 100px 1rem 2rem;
   }
@@ -486,6 +449,10 @@ textarea:focus {
 
   .contact-form {
     gap: 1rem;
+  }
+
+  .form-row {
+    flex-direction: column;
   }
 
   .form-group label {
@@ -503,17 +470,17 @@ textarea:focus {
     padding: 0.7rem 1.2rem;
     font-size: 1rem;
   }
-
-  .nav-toggle {
-    font-size: 1.8rem;
-  }
-
-  .nav-brand {
-    font-size: 1.2rem;
-  }
 }
 
 @media (max-width: 400px) {
+  .lg-heading {
+    font-size: 1.8rem;
+  }
+
+  .sm-heading {
+    font-size: 1rem;
+  }
+
   .contact-section {
     padding-top: 80px;
   }
